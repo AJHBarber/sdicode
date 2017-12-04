@@ -1,19 +1,15 @@
-ALLOUT = factoral tour
+ALLOUT = tour
 INCLUDEDIR = ../headers
 CXXFLAGS   = -std=c++11 -I $(INCLUDEDIR) -Wall -Wfatal-errors
 vpath %.h $(INCLUDEDIR)
 
 all: $(ALLOUT) 
 
-factoral: factoral.cpp facto.o
-	g++ $(CXXFLAGS) factoral.cpp facto.o -o factoral
+tour: tour.cpp tour.o
+	g++ $(CXXFLAGS) tour.cpp tour.o -o tour
 
-tour: tour.cpp
-	g++ $(CXXFLAGS) tour.cpp -o tour
-
-facto.o : getFactoral.cpp factoral.h
-	g++ $(CXXFLAGS) -c getFactoral.cpp -o facto.o
-
+tour.o : listTour.cpp tour.h
+	g++ $(CXXFLAGS) -c listTour.cpp -o tour.o
 clean:
-	rm -f prime.o facto.o $(ALLOUT)
+	rm -f tour.o $(ALLOUT)
 
